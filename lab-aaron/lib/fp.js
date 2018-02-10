@@ -1,16 +1,16 @@
 'use strict';
 
 const doubler = (n) => {return 2 * n};
-const isEven = (n) => {return n % 2}
-let array = [23, 65, 78, 2, 4, 8, 16];
+const isEven = (n) => {return n % 2};
+// let array = [23, 65, 78, 2, 4, 8, 16];
 
 
 const forEach = (array, cb) => {
   for (let i = 0; i < array.length; i++) {
     cb(array[i]);
   }
+  return array.forEach(doubler);
 }//this is how .forEach is implemented
-console.log(array.forEach(doubler));
 
 
 
@@ -22,8 +22,8 @@ const map = (array, cb) => {
     results.push(result);
   }
 }//this is how .map is implemented
+// console.log(array.map(doubler));
 
-console.log(array.map(doubler));
 
 
 
@@ -37,7 +37,7 @@ const filter = (array, cb) => {
     }
   }
 }//this is how .filter is implemented
-console.log(array.filter(isEven));
+// console.log(array.filter(isEven));
 
 
 const reduce = (array, cb) => {
@@ -46,4 +46,11 @@ const reduce = (array, cb) => {
     result += cb(array[i]);
   } return result;
 }//this is how .reduce is implemented
-console.log(array.reduce(doubler));
+// console.log(array.reduce(doubler));
+
+module.exports = {};
+
+module.exports.forEach = forEach;
+module.exports.map = map;
+module.exports.filter = filter;
+module.exports.reduce = reduce;
