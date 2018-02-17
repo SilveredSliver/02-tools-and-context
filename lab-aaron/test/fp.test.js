@@ -1,7 +1,6 @@
 'use strict';
 
 const forEach = require('../lib/fp.js').forEach;
-//this line connects to the other file and "picks off" the function containsVowels
 const doubler = (n) => {return n * 2};
 const isEven = (n) => {return n % 2 === 0};
 let array = [20, 32, 15, 1, 4, 3, 16];
@@ -30,7 +29,7 @@ describe("map function", () => {
 const filter = require('../lib/fp.js').filter;
 
 describe("filter function", () => {
-  it('it should return ...', () => {
+  it('it should return only the even elements in an array', () => {
     let result = filter(array, isEven);
     let expected = [20, 32, 4, 16];
     expect(result).toEqual(expected);
